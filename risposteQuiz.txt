@@ -15,3 +15,26 @@ variabile secondBurger non ne crea una copia e le due variabili faranno quindi r
 ad un unico stesso oggetto in memoria.
 Quindi modificare il nome di secondBurger modifica anche il nome di Burger.
 in console vedrò 2 stampe uguali "Double Cheese Burger
+
+
+2--------------
+P.S.: Ricordati che gli Array, come gli oggetti, sono dei Reference Type (Tipi di Riferimento)!
+Senza lanciare il codice, riesci a prevedere cosa viene stampato in console?
+Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice?
+
+const hamburger = { 
+	name: "Cheese Burger", 
+	weight: 250,
+	ingredients: ["Cheese", "Meat", "Bread", "Tomato"]
+};
+
+const secondBurger = {...hamburger};
+secondBurger.ingredients[0] = "Salad";
+
+console.log(hamburger.ingredients[0]); // ?
+console.log(secondBurger.ingredients[0]); // ?
+
+Usare lo spread operator copierà solo il primo livello di proprietà ma in questo caso l'array
+rappresenta un annidamento e non sarà copiato, ci saranno due hamburger ma un solo
+set di ingredienti. In console quindi ci sarà 2 volte Salad
+
