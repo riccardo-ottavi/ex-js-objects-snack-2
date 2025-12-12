@@ -1,0 +1,17 @@
+1--------------
+Senza lanciare il codice, riesci a prevedere cosa viene stampato in console?
+Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice?
+
+const hamburger = { name: "Cheese Burger", weight: 250 };
+const secondBurger = hamburger;
+secondBurger.name = 'Double Cheese Burger';
+secondBurger.weight = 500;
+
+console.log(hamburger.name); // ?
+console.log(secondBurger.name ); // ?
+
+Poiché in js gli oggetti sono dei reference type e non primitive, assegnare l'oggetto alla 
+variabile secondBurger non ne crea una copia e le due variabili faranno quindi riferimento 
+ad un unico stesso oggetto in memoria.
+Quindi modificare il nome di secondBurger modifica anche il nome di Burger.
+in console vedrò 2 stampe uguali "Double Cheese Burger
