@@ -89,3 +89,8 @@ Il metodo migliore allora sarà utilizzare lo spread che permette di copiare le 
 in una shallow copy
 
 const chefClone = {...chef};
+
+Invece dato che l'oggetto restaurant contiene dei dati di tipo non primitivo (address)
+non possiamo usare la shallow copy perché copierebbe solo il riferimento.
+Meglio qua usare structuredClone(restaurant) per preservare anche il formato dell'oggetto
+Date
